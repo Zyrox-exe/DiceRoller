@@ -43,6 +43,9 @@ button:active{
 img{
     height: 150px;
 }
+#diceImages{
+    padding: 0 8px;
+}
 #diceResult{
     margin: 25px;
 }

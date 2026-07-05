@@ -10,7 +10,9 @@ function rollDice(){
         values.push(value);
         images.push(`<img src="images/${value}.png" alt="Dice ${value}">`);
     }
+    const totalSum = values.reduce((acc, curr) => acc + curr, 0);
 
-    diceResult.textContent = `Results: ${values.join(", ")}`
+    diceResult.textContent = `Results: ${values.join(", ")}`    
+    diceTotal.textContent = `Total: ${totalSum}`
     diceImages.innerHTML = images.join(" ");
 }
