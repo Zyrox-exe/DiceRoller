@@ -16,3 +16,9 @@ function rollDice(){
     diceTotal.textContent = `Total: ${totalSum}`
     diceImages.innerHTML = images.join(" ");
 }
+let htmlBody = document.getElementById("htmlBody");
+let darkmodeToggle = document.getElementById("darkmodeToggle");
+
+darkmodeToggle.addEventListener('click', () => {
+    htmlBody.classList.toggle("darkmode");
+});

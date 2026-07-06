@@ -1,11 +1,35 @@
+:root{
+    --primary-color: white;
+    --card-background: rgba(240, 248, 255, 0.479);
+    --text-color: black;
+    --shadow: rgba(0, 0, 0, 0.806);
+    --btn-background: rgb(46, 183, 237);
+    --btn-hover: hsl(197, 71%, 70%);
+    --btn-active: hsl(197, 71%, 50%);
+    --body-background: url("images/light-background.jpg");
+}
+
+.darkmode{
+    --primary-color: black;
+    --card-background: rgba(59, 59, 59, 0.479);
+    --text-color: white;
+    --shadow: rgba(255, 255, 255, 0.642);
+    --btn-background: rgb(46, 183, 237);
+    --btn-hover: hsl(197, 71%, 70%);
+    --btn-active: hsl(197, 71%, 50%);
+    --body-background: url("images/dark-background.jpg")
+}
+
 body{
-    background: url("https://plus.unsplash.com/premium_photo-1674595901755-80573f6254cb?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    transition: 0.6s;
+    background: var(--body-background);
     padding: 0;
     margin: 0;
     backdrop-filter: blur(6px);
     min-height: 100vh;
     min-width: 100vw;
     border-radius: 16px;
+    color: var(--text-color);
 }
 #superContainer{
     display: flex;
@@ -22,34 +46,34 @@ body{
     font-size: 2em;
     font-weight: bold;
     border-radius: 16px;
-    background-color: rgba(240, 248, 255, 0.479);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.806);
+    background-color: var(--card-background);
+    box-shadow: 0 8px 32px 0 var(--shadow);
 }
 button{
     border: none;
     border-radius: 12px;
     padding: 10px 15px;
     font-size: 1.2em;
-    background-color: rgb(46, 183, 237);
-    color: white;
+    background-color: var(--btn-background);
+    color: var(--primary-color);
     cursor: pointer;
 }
 button:hover{
-    background-color: hsl(197, 71%, 70%);
+    background-color: var(--btn-hover);
 }
 button:active{
-    background-color: hsl(197, 71%, 50%);
+    background-color: var(--btn-active);
 }
 img{
     height: 150px;
 }
 #diceImages{
-    padding: 0 8px;
+    padding: 8px 8px;
 }
 #diceResult{
     margin: 25px;
 }
-input{
+#numOfDice{
     height: 1.2em;
     width: 30%;
     font-size: 40px;
@@ -61,4 +85,51 @@ input{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+#toggleBtnContainer{
+    position: absolute;
+    top: 8px;
+    right: 6vw;
+}
+#darmodeLabel{
+    display: block;
+    width: 50px;
+    height: 20px;
+    position: absolute;
+    top: 8px;
+    right: 4px;
+    background: #ebebeb;
+    border: 2px;
+    border-radius: 20px;
+    box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: 0.3s;
+}
+#darkmodeLabel:after{
+    content: "";
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: linear-gradient(180deg, #ffcc89, #d8860b);
+    border-radius: 180px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+#darkmodeToggle{
+    visibility: hidden;
+    height: 0;
+    width: 0;
+}
+#darkmodeToggle:checked + #darkmodeLabel{
+    background: #242424;
+}
+#darkmodeToggle:checked + #darkmodeLabel:after{
+    left: 49px;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg, #777, #3a3a3a);
+}
+#darkmodeToggle:active:after{
+    width: 26px;
 }
