@@ -2,6 +2,7 @@ function rollDice(){
     const numOfDice = document.getElementById("numOfDice").value;
     const diceResult = document.getElementById("diceResult");
     const diceImages = document.getElementById("diceImages");
+    const diceTotal = document.getElementById("diceTotal");
     const values = [];
     const images = [];
 
